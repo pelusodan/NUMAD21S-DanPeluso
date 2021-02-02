@@ -4,73 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ButtonActivity">
+    tools:context=".view.ButtonActivity">
 
     <Button
+        android:id="@+id/a_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/a"
-        android:id="@+id/a_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/d_button"
         app:layout_constraintEnd_toStartOf="@id/b_button"
-        app:layout_constraintBottom_toTopOf="@id/d_button"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/b_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/b"
-        android:id="@+id/b_button"
-        app:layout_constraintStart_toEndOf="@id/a_button"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/d_button"
         app:layout_constraintEnd_toStartOf="@id/c_button"
-        app:layout_constraintBottom_toTopOf="@id/d_button"/>
+        app:layout_constraintStart_toEndOf="@id/a_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
+        android:id="@+id/c_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/c"
-        android:id="@+id/c_button"
-        app:layout_constraintStart_toEndOf="@id/b_button"
+        app:layout_constraintBottom_toTopOf="@id/d_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/d_button"/>
+        app:layout_constraintStart_toEndOf="@id/b_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
+        android:id="@+id/d_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/d"
-        android:id="@+id/d_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/e_button"
-        app:layout_constraintTop_toBottomOf="@id/a_button"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a_button" />
+
     <Button
+        android:id="@+id/e_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/e"
-        android:id="@+id/e_button"
-        app:layout_constraintTop_toBottomOf="@id/a_button"
-        app:layout_constraintStart_toEndOf="@id/d_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/f_button"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/d_button"
+        app:layout_constraintTop_toBottomOf="@id/a_button" />
+
     <Button
+        android:id="@+id/f_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/f"
-        android:id="@+id/f_button"
-        app:layout_constraintStart_toEndOf="@id/e_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/a_button"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/e_button"
+        app:layout_constraintTop_toBottomOf="@id/a_button" />
 
     <TextView
+        android:id="@+id/pressed_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/last_pressed_label"
-        android:id="@+id/pressed_textview"
-        app:layout_constraintTop_toBottomOf="@id/d_button"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="30sp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/d_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

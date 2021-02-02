@@ -1,16 +1,14 @@
- package edu.neu.madcourse.numad21f_danpeluso;
+package edu.neu.madcourse.numad21f_danpeluso.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import edu.neu.madcourse.numad21f_danpeluso.R;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setNewActivityClickListener() {
         newActivityButton = findViewById(R.id.new_activity_button);
-        newActivityButton.setOnClickListener(v ->{
+        newActivityButton.setOnClickListener(v -> {
             Intent buttonActivityIntent = new Intent(this, ButtonActivity.class);
             startActivity(buttonActivityIntent);
         });
