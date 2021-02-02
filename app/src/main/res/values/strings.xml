@@ -8,6 +8,14 @@
     <string name="previous">Previous</string>
     <string name="about">About</string>
     <string name="email_and_name">Dan Peluso - peluso.d@husky.neu.edu</string>
+    <string name="new_activity">New Activity</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="f">F</string>
+    <string name="last_pressed_label">Pressed: %1$s</string>
 
     <string name="hello_first_fragment">Hello World!</string>
 </resources>

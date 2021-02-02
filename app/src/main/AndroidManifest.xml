@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_dp_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21SDanPeluso">
+        <activity android:name=".ButtonActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

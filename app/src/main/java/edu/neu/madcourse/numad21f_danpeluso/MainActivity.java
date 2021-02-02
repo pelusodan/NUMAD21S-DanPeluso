@@ -1,5 +1,6 @@
-package edu.neu.madcourse.numad21f_danpeluso;
+ package edu.neu.madcourse.numad21f_danpeluso;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button aboutButton;
     private TextView emailTextview;
+    private Button newActivityButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setAboutClickListener();
+        setNewActivityClickListener();
+    }
+
+    private void setNewActivityClickListener() {
+        newActivityButton = findViewById(R.id.new_activity_button);
+        newActivityButton.setOnClickListener(v ->{
+            Intent buttonActivityIntent = new Intent(this, ButtonActivity.class);
+            startActivity(buttonActivityIntent);
+        });
     }
 
     private void setAboutClickListener() {
