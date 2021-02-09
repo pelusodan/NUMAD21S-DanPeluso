@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21SDanPeluso">
         <activity
+            android:name=".view.LinkCollectorActivity"
+            android:screenOrientation="sensor" />
+        <activity
             android:name=".view.ButtonActivity"
             android:screenOrientation="sensor" />
         <activity

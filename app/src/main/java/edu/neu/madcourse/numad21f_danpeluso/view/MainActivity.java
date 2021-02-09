@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button aboutButton;
     private TextView emailTextview;
     private Button newActivityButton;
+    private Button linkCollectorButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
 
         setAboutClickListener();
         setNewActivityClickListener();
+        setLinkCollectorClickListener();
+    }
+
+    private void setLinkCollectorClickListener() {
+        linkCollectorButton = findViewById(R.id.link_collector_button);
+        linkCollectorButton.setOnClickListener(v -> {
+            Intent linkCollectorActivityIntent = new Intent(this, LinkCollectorActivity.class);
+            startActivity(linkCollectorActivityIntent);
+        });
     }
 
     private void setNewActivityClickListener() {
