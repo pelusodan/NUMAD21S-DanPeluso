@@ -12,6 +12,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -49,6 +50,22 @@ class LinkCollectorActivity : AppCompatActivity() {
     private fun initViews() {
         recyclerView = findViewById(R.id.link_collector_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(this)
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
+                0,
+                ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.layoutPosition
+                viewModel.removeLinkAt(position)
+                recyclerView.adapter?.notifyItemRemoved(position)
+                Snackbar.make(findViewById(android.R.id.content), "Removed ${viewModel.getNameFromPosition(position)} from list", Snackbar.LENGTH_LONG)
+                        .show()
+            }
+        })
+        itemTouchHelper.attachToRecyclerView(recyclerView)
 
         fab = findViewById(R.id.link_collector_fab)
         fab.setOnClickListener { showInputDialog() }
