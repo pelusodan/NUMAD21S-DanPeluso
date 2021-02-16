@@ -10,7 +10,7 @@
     <string name="email_and_name">Dan Peluso - peluso.d@husky.neu.edu</string>
     <string name="hello_first_fragment">Hello World!</string>
     <!-- A2-->
-    <string name="new_activity">New Activity</string>
+    <string name="clicky_clack">Clicky Clack</string>
     <string name="a">A</string>
     <string name="b">B</string>
     <string name="c">C</string>
@@ -24,4 +24,6 @@
     <string name="link_collector_name_hint">Name</string>
     <string name="link_collector_url_hint">URL</string>
     <string name="ok">OK</string>
+    <!--A4-->
+    <string name="display_location">Display Location</string>
 </resources>

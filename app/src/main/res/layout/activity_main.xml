@@ -30,7 +30,7 @@
         android:id="@+id/new_activity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_activity"
+        android:text="@string/clicky_clack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/about_button" />
@@ -44,6 +44,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/new_activity_button" />
 
+    <Button
+        android:id="@+id/location_activity_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/display_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/link_collector_button" />
 
     <TextView
         android:id="@+id/email_textview"
@@ -56,6 +64,6 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/link_collector_button" />
+        app:layout_constraintTop_toBottomOf="@id/location_activity_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
