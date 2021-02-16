@@ -22,6 +22,14 @@ import static android.view.View.VISIBLE;
 public class MainActivity extends AppCompatActivity {
 
     private TextView emailTextview;
+    private ActivityResultLauncher<String> requestPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    launchLocationActivity();
+                } else {
+                    Toast.makeText(this, "Need location permission to open Activity", Toast.LENGTH_LONG).show();
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 PackageManager.PERMISSION_GRANTED) {
             launchLocationActivity();
         } else {
-            ActivityResultLauncher<String> requestPermissionLauncher =
-                    registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                        if (isGranted) {
-                            launchLocationActivity();
-                        } else {
-                            Toast.makeText(this, "Need location permission to open Activity", Toast.LENGTH_LONG).show();
-                        }
-                    });
             requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION);
         }
     }
