@@ -57,15 +57,16 @@ class WebServiceActivity : AppCompatActivity() {
 
     private fun handleViewState(state: WebServiceViewState) {
         if (state.isLoading) {
-            progressView.visibility = VISIBLE
-            progressView.animate()
+            progressView.apply {
+                visibility = VISIBLE
+                animate()
+            }
         } else if (!state.isLoading && state.catFacts.isNotEmpty()) {
             progressView.visibility = GONE
-            val factsString: String = state.catFacts
+            factList.text = state.catFacts
                     .filter { !it.deleted }
                     .map { it.text }
                     .reduce { acc, s -> acc + "\n\n\n" + s }
-            factList.text = factsString
         }
         state.errorMessage?.let { Toast.makeText(this, it, Toast.LENGTH_LONG).show() }
     }
