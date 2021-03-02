@@ -22,7 +22,7 @@ import static android.view.View.VISIBLE;
 public class MainActivity extends AppCompatActivity {
 
     private TextView emailTextview;
-    private ActivityResultLauncher<String> requestPermissionLauncher =
+    private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
                     launchLocationActivity();
@@ -39,6 +39,15 @@ public class MainActivity extends AppCompatActivity {
         setNewActivityClickListener();
         setLinkCollectorClickListener();
         setLocationButtonClickListener();
+        setWebServiceButtonClickListener();
+    }
+
+    private void setWebServiceButtonClickListener() {
+        Button webServiceActivityButton = findViewById(R.id.web_service_button);
+        webServiceActivityButton.setOnClickListener(v -> {
+            Intent webServiceIntent = new Intent(this, WebServiceActivity.class);
+            startActivity(webServiceIntent);
+        });
     }
 
     private void setLocationButtonClickListener() {

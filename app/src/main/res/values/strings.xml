@@ -26,4 +26,8 @@
     <string name="ok">OK</string>
     <!--A4-->
     <string name="display_location">Display Location</string>
+    <!--A5-->
+    <string name="web_service">Web Service</string>
+    <string name="how_many_cats">How many cat facts would you like to receive?</string>
+    <string name="send">Get facts</string>
 </resources>
